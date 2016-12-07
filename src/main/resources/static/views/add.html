@@ -1,0 +1,39 @@
+<section class="container">
+<form name="addForm" ng-submit="add()" novalidate>
+    
+    <div>
+    <h1>Adding a new tips</h1>
+    </div>
+    
+    <fieldset>
+	 		<!-- Title -->
+	 		<input type="text" name="title" placeholder="Tip title"
+	 		ng-model="tip.title" ng-required="true"/>
+	 		<p class="error validationerror" 
+               ng-show="addForm.title.$invalid && 
+	 		addForm.title.$touched">Title is required</p>
+	 		<br/>
+	 		<!-- Category -->
+	 		<input type="text" name="category" placeholder="Category" 
+	 		ng-model="tip.category" ng-required="true"/>
+	 		<p class="error validationerror" 
+               ng-show="addForm.category.$invalid && 
+	 		addForm.category.$touched">Category is required</p>
+	 	     <br/>	
+        
+	 		<!-- Description -->
+	 		<textarea class="form-control" rows="3" name="description"               placeholder="Description"
+                      ng-model="tip.description"  
+                      ng-required="true">
+            </textarea>
+	 		<p class="error validationerror" ng-show="addForm.description.$invalid && 
+	 		addForm.description.$touched">Description is required </p>
+            <br/>   
+	 	</fieldset>
+	 	
+	 	<button type="submit" class="btn btn-primary" 
+                ng-disbaled="addForm.$invalid">Add</button>
+        <a  class="btn btn-primary" ng-disbaled="addForm.$valid" ng-click="clear()"/>Clear</a>
+	 	<p> or <a ng-href="#/">Cancel</a>
+</form>
+</section>

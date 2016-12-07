@@ -1,0 +1,10 @@
+
+  <div class="">
+      <input class="form" type="text" ng-model="category" placeholder="Filter by category"/>
+      <section  ng-repeat="memo in memos | filter: category" >
+
+      <div class="">
+        <a> {{memo.title}} </a>
+  		
+      </div>	
+</div>  
